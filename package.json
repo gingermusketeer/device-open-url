@@ -1,0 +1,24 @@
+{
+  "name": "device-open-url",
+  "version": "1.0.0",
+  "description": "Simplifies opening urls on mobile simulators and devices",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gingermusketeer/device-open-url.git"
+  },
+  "keywords": [
+    "ios",
+    "open",
+    "url"
+  ],
+  "bugs": {
+    "url": "https://github.com/gingermusketeer/device-open-url/issues"
+  },
+  "homepage": "https://github.com/gingermusketeer/device-open-url#readme"
+}
