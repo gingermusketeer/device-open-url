@@ -1,44 +1,50 @@
 'use strict'
-const parseOutput = require('./lib/parse-available-ios-devices').parseOutput
-
 let version = process.argv[2]
 let deviceName = process.argv[3]
 let url = process.argv[4]
 
 const execSync = require('child_process').execSync
+const async = require('async')
+const ios = require('./lib/ios')
 
-let output = execSync('xcrun simctl list').toString()
-let versions = parseOutput(output)
-
-let devices = versions[version]
-let device
-if (devices){
-  device = devices[deviceName]
-  if (!device) {
-    console.log(
-      `Invalid ios device provided. Got ${device} options are ${Object.keys(devices)}`)
-    process.exit(1)
-  }
-} else {
-  console.log(
-    `Invalid version provided. Got ${version} options are ${Object.keys(versions)}`
-  )
-  process.exit(1)
-}
-let deviceID = device['id']
-
-if (device['state'] === 'Shutdown') {
-  let output = execSync(`open -n -a Simulator --args -CurrentDeviceUDID '${deviceID}'`).toString()
-  while (true) {
-    console.log('waiting for device to boot')
-
-    let output = execSync(`xcrun simctl list | grep '${deviceID}'`).toString()
-    if(output.indexOf('Booted') > -1) {
-      break
+function device(cb, results){
+  const versions = results.availableDevices
+  let devices = versions[version]
+  let device
+  let error
+  if (devices){
+    device = devices[deviceName]
+    if (!device) {
+      error = `Invalid ios device provided. Got ${device} options are ` +
+        `${Object.keys(devices)}`
     }
+  } else {
+    error = `Invalid version provided. Got ${version} options are ` +
+      `${Object.keys(versions)}`
   }
+
+  cb(error, device)
 }
 
-let openOutput = execSync(`xcrun simctl openurl ${deviceID} ${url}`).toString()
-
-console.log(openOutput)
+async.auto({
+  availableDevices: ios.availableDevices,
+  device: device,
+  startDevice: function(cb, results) {
+    if (results.device.state === 'Shutdown') {
+      ios.startDevice(results.device.id, cb)
+    } else {
+      cb(null)
+    }
+  },
+  openURL: function openURL(cb, results){
+    ios.openURL(results.device.id, url, cb)
+  }
+}, function completed(err) {
+  if (err) {
+    console.log(err)
+    process.exit(1)
+  } else {
+    // Sleep until testem kills us
+    while (true);;
+  }
+})
