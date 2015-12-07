@@ -3,17 +3,25 @@
 
 const deviceOpenUrl = require('../')
 
-let version = process.argv[2]
-let deviceName = process.argv[3]
-let url = process.argv[4]
+let deviceType = process.argv[2]
+let version = process.argv[3]
+let deviceName = process.argv[4]
+let url = process.argv[5]
 
-deviceOpenUrl.ios.startAndOpenUrl(version, deviceName, url, function(err){
-  if (err) {
-    console.log(err)
-    process.exit(1)
-  } else {
-    // Sleep until testem kills us
-    while (true);;
-  }
-
-})
+if (deviceOpenUrl[deviceType]) {
+  deviceOpenUrl.ios.startAndOpenUrl(version, deviceName, url, function(err){
+    if (err) {
+      console.log(err)
+      process.exit(1)
+    } else {
+      // Sleep until testem kills us
+      while (true);;
+    }
+  })
+} else {
+  console.log(
+    `Invalid device type provided. Got ${deviceType} options are ` +
+      `${Object.keys(deviceOpenUrl)}`
+  )
+  process.exit(1)
+}
