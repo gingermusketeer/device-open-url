@@ -1,0 +1,42 @@
+== Device Types ==
+iPhone 4s (com.apple.CoreSimulator.SimDeviceType.iPhone-4s)
+iPhone 5 (com.apple.CoreSimulator.SimDeviceType.iPhone-5)
+iPhone 5s (com.apple.CoreSimulator.SimDeviceType.iPhone-5s)
+iPhone 6 (com.apple.CoreSimulator.SimDeviceType.iPhone-6)
+iPhone 6 Plus (com.apple.CoreSimulator.SimDeviceType.iPhone-6-Plus)
+iPhone 6s (com.apple.CoreSimulator.SimDeviceType.iPhone-6s)
+iPhone 6s Plus (com.apple.CoreSimulator.SimDeviceType.iPhone-6s-Plus)
+iPad 2 (com.apple.CoreSimulator.SimDeviceType.iPad-2)
+iPad Retina (com.apple.CoreSimulator.SimDeviceType.iPad-Retina)
+iPad Air (com.apple.CoreSimulator.SimDeviceType.iPad-Air)
+iPad Air 2 (com.apple.CoreSimulator.SimDeviceType.iPad-Air-2)
+iPad Pro (com.apple.CoreSimulator.SimDeviceType.iPad-Pro)
+Apple TV 1080p (com.apple.CoreSimulator.SimDeviceType.Apple-TV-1080p)
+Apple Watch - 38mm (com.apple.CoreSimulator.SimDeviceType.Apple-Watch-38mm)
+Apple Watch - 42mm (com.apple.CoreSimulator.SimDeviceType.Apple-Watch-42mm)
+== Runtimes ==
+iOS 8.4 (8.4 - 12H141) (com.apple.CoreSimulator.SimRuntime.iOS-8-4)
+iOS 9.1 (9.1 - 13B137) (com.apple.CoreSimulator.SimRuntime.iOS-9-1)
+tvOS 9.0 (9.0 - 13T393) (com.apple.CoreSimulator.SimRuntime.tvOS-9-0)
+watchOS 2.0 (2.0 - 13S343) (com.apple.CoreSimulator.SimRuntime.watchOS-2-0)
+== Devices ==
+-- iOS 8.4 --
+  iPhone 6 (CF0E352C-B2C5-4551-856E-21BBA93519A2) (Booted)
+  iPad 2 (C97EB47C-C0B5-4304-86BD-9C5FECFD5EE1) (Shutdown)
+-- iOS 9.1 --
+  iPhone 6 (0877C7B4-4D25-4BF6-85CB-2E893E875C11) (Shutdown)
+  iPad Air 2 (30413063-E735-4FAE-B4FF-C90FDD922929) (Booted)
+-- tvOS 9.0 --
+  Apple TV 1080p (E3AC6B55-52BB-4C61-A19E-905181B4649F) (Shutdown)
+-- watchOS 2.0 --
+  Apple Watch - 38mm (0BBD4017-5569-439B-8B6F-1EA77FC80B5E) (Shutdown)
+-- Unavailable: com.apple.CoreSimulator.SimRuntime.iOS-8-1 --
+  iPhone 4s (59A7EE1D-7C22-4883-9E37-4FE783005174) (Shutdown) (unavailable, runtime profile not found)
+-- Unavailable: com.apple.CoreSimulator.SimRuntime.iOS-8-3 --
+  iPhone 4s (30E34A0D-79A9-45A9-AFB5-C8BC57DAF428) (Shutdown) (unavailable, runtime profile not found)
+-- Unavailable: com.apple.CoreSimulator.SimRuntime.iOS-9-0 --
+  iPhone 4s (2DACCEEF-246E-4796-B5A7-D828A708D8E4) (Shutdown) (unavailable, runtime profile not found)
+== Device Pairs ==
+7489CE39-4E76-4910-8852-0320F8BD0ECE (disconnected)
+  Watch: Apple Watch - 38mm (0BBD4017-5569-439B-8B6F-1EA77FC80B5E) (Shutdown)
+  Phone: iPhone 6s (EE628643-701C-4B67-8ADC-9161964BCDB4) (Booted)

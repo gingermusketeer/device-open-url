@@ -7,7 +7,7 @@
     "device-open-url": "./bin/device-open-url"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "tape tests/**/*-test.js"
   },
   "author": "",
   "license": "MIT",
@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/gingermusketeer/device-open-url#readme",
   "dependencies": {
-    "async": "^1.5.0"
+    "async": "^1.5.0",
+    "tape": "4.2.2"
   }
 }
