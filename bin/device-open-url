@@ -1,0 +1,19 @@
+#!/usr/bin/env node
+'use strict'
+
+const deviceOpenUrl = require('../')
+
+let version = process.argv[2]
+let deviceName = process.argv[3]
+let url = process.argv[4]
+
+deviceOpenUrl.ios.startAndOpenUrl(version, deviceName, url, function(err){
+  if (err) {
+    console.log(err)
+    process.exit(1)
+  } else {
+    // Sleep until testem kills us
+    while (true);;
+  }
+
+})
